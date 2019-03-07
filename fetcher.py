@@ -7,7 +7,6 @@ def prompts():
     try:
         myHostname = input("Server name/IP: ")
         myUsername = input("Username: ")
-#        myPassword = input("Password for " + myHostname + ": ")
         myPassword = getpass.getpass("Password: ")
         remote_file = input("Full path of the file you want to transfer from the remote machine: ")
         home_dir = input("Local directory: ")
