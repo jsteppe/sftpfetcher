@@ -13,7 +13,7 @@ def prompts():
 
         with pysftp.Connection(host=myHostname, username=myUsername, password=myPassword) as sftp:
 
-            print("Connection succesfully established. File transferred.")
+            print("Connection successfully established. File transferred.")
     
             remoteFilePath = remote_file
             localFilePath = home_dir + file_basename
