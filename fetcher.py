@@ -4,7 +4,8 @@ import getpass
 
 def prompts():
     """Asking for the remote machine and remote file parameters"""
-    try:
+try:
+    while True:
         myHostname = input("Server name/IP: ")
         myUsername = input("Username: ")
         myPassword = getpass.getpass("Password: ")
@@ -21,15 +22,12 @@ def prompts():
 
             sftp.get(remoteFilePath, localFilePath)
 
-            while True:
-                cont = input("Continue operations? [y/n]: ")
-                if cont == "y":
-                    prompts()
-                elif cont == "n":
-                    quit()
-                else:
-                    continue
-    except KeyboardInterrupt:
-        print("Exiting...")
+            cont = input("Continue operations? [y/n]: ")
+            if cont == "n":
+                quit()
+            else:
+                continue
+except KeyboardInterrupt:
+    print("Exiting...")
 
 prompts()
